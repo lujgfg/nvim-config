@@ -4,12 +4,14 @@ return {
         "nvim-lua/plenary.nvim",
         {
             "nvim-telescope/telescope-fzf-native.nvim",
-            build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && "
-                .. "cmake --build build --config Release && "
-                .. "cmake --install build --prefix build",
+            build = 'make',
+            -- build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && "
+            --     .. "cmake --build build --config Release && "
+            --     .. "cmake --install build --prefix build",
         },
     },
-    cmd = "Telescope",
+    -- cmd = "Telescope",
+    event = "VeryLazy",
     opts = {
         extensions = {
             fzf = {
@@ -21,10 +23,9 @@ return {
         },
     },
     keys = {
-        { "<leader>fs", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-        { "<leader>fz", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
-        { "<leader>fp", "<cmd>Telescope git_files<cr>", desc = "Search git files" },
-        { "<leader>fo", "<cmd>Telescope oldfiles<cr>", desc = "Recently opened files" },
+        { "<leader>ff", "<cmd>Telescope find_files<cr>", desc =  'Telescope find files', mode = "n"},
+        { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = 'Telescope live grep', mode = "n"},
+        { "<leader>fo", "<cmd>Telescope oldfiles<cr>", desc = 'Telescope recently opened files', mode = "n"},
     },
     config = function(_, opts)
         local telescope = require "telescope"
