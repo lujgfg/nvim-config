@@ -20,8 +20,14 @@ return {
             R_args = {"--quiet", "--no-save"},
             min_editor_width = 72,
             rconsole_width = 78,
+            rconsole_height = 15,
+            objbr_place = "right",
+
             objbr_mappings = { -- Object browser keymap
                 c = 'class', -- Call R functions
+                n = 'names',
+                s = 'summary',
+                t = 'table',
                 ['<localleader>gg'] = 'head({object}, n = 15)', -- Use {object} notation to write arbitrary R code.
                 v = function()
                     -- Run lua functions

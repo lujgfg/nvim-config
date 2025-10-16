@@ -9,7 +9,7 @@ return {
         -- nvim-cmp 基本配置
         cmp.setup({
             sources = {
-                { name = "r" },      -- cmp-r 对应的 source
+                { name = "cmp_r" },      -- cmp-r 对应的 source
                 { name = "buffer" }, -- 可选：buffer 补全
                 { name = "path" },   -- 可选：路径补全
             },
