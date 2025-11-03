@@ -14,14 +14,21 @@ return {
     opts = {
         history = true,
         delete_check_events = 'TextChanged',
-        ft_func = function()
-            -- return vim.split(vim.bo.filetype, '.', { plain = true })
-            if vim.bo.filetype == "lua" then
+            ft_func = function()
+              -- return vim.split(vim.bo.filetype, '.', { plain = true })
+              local ft = vim.bo.filetype
+              if ft == "lua" then
                 return { "lua" }
-            else
-                return { }
-            end
-        end,
+              elseif ft == "r" then
+                return { "r" }
+              elseif ft == "rmd" then
+                return { "rmd" }
+              elseif ft == "python" then
+                return { "python" }
+              else
+                return {}
+              end
+            end,
     },
     config = function(_, opts)
         require('luasnip').setup(opts)

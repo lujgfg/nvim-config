@@ -13,8 +13,9 @@ return {
         local opts = {
             hook = {
                 on_filetype = function()
-                    vim.api.nvim_buf_set_keymap(0, "n", "<Enter>", "<Plug>RDSendLine", {})
-                    vim.api.nvim_buf_set_keymap(0, "v", "<Enter>", "<Plug>RSendSelection", {})
+                    vim.api.nvim_buf_set_keymap(0, "n", "<Enter>", "<Plug>RDSendLine", { noremap = true })
+                    vim.api.nvim_buf_set_keymap(0, "v", "<Enter>", "<Plug>RSendSelection", { noremap = true })
+                    vim.api.nvim_buf_set_keymap(0, "i", "<M-,>", "<Plug>RInsertPipe", { noremap = true })
                 end
             },
             R_args = {"--quiet", "--no-save"},
@@ -23,9 +24,9 @@ return {
             rconsole_height = 15,
             objbr_place = "right",
 
-            objbr_mappings = { -- Object browser keymap
+            objbr_mappings = {
                 c = 'class', -- Call R functions
-                n = 'names',
+                ['<localleader>gn'] = 'names',
                 s = 'summary',
                 t = 'table',
                 ['<localleader>gg'] = 'head({object}, n = 15)', -- Use {object} notation to write arbitrary R code.
