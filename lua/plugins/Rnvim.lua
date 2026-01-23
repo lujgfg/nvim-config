@@ -7,6 +7,9 @@ return {
     -- is a high priority for you, pin to the latest minor version, but unpin
     -- it and try the latest version before reporting an issue:
     -- version = "~0.1.0"
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter"
+    },
     config = function()
         -- Create a table with the options to be passed to setup()
         ---@type RConfigUserOpts
@@ -16,6 +19,7 @@ return {
                     vim.api.nvim_buf_set_keymap(0, "n", "<Enter>", "<Plug>RDSendLine", { noremap = true })
                     vim.api.nvim_buf_set_keymap(0, "v", "<Enter>", "<Plug>RSendSelection", { noremap = true })
                     vim.api.nvim_buf_set_keymap(0, "i", "<M-,>", "<Plug>RInsertPipe", { noremap = true })
+                    vim.api.nvim_buf_set_keymap(0, "n", "<localleader>RO", "<Cmd>ROxygenize<CR>", { noremap = true })
                 end
             },
             R_args = {"--quiet", "--no-save"},

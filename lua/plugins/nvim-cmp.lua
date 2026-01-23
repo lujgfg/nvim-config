@@ -14,8 +14,6 @@ return {
             'hrsh7th/cmp-path',
             -- Luasnip completion source for nvim-cmp
             'saadparwaiz1/cmp_luasnip',
-            -- Completion using R.nvim as backend
-            "R-nvim/cmp-r",
         },
         opts = function()
             local cmp = require('cmp')
@@ -75,7 +73,6 @@ return {
                 },
                 sources = cmp.config.sources({
                     -- { name = 'cmp_zotcite' },
-                    { name = 'cmp_r' },
                     { name = 'otter' },
                     { name = 'nvim_lsp', priority = 50 },
                     { name = 'path', priority = 40 },
@@ -174,9 +171,6 @@ return {
                 })
             })
 
-            require("cmp_r").setup({
-                doc_width = 62,
-            })
         end,
     },
 

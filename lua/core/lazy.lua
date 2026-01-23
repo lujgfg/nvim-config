@@ -18,7 +18,6 @@ require("lazy").setup({
     }
 })
 
--- 加载 LuaSnip 的自定义 snippets（支持项目级 snippets）
 pcall(function()
   require("luasnip.loaders.from_lua").lazy_load({ paths = vim.fn.stdpath("config") .. "/snippets" })
 end)
