@@ -17,6 +17,8 @@ vim.opt.list = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
+vim.opt.termguicolors = true
+
 vim.opt.clipboard = "unnamedplus" -- unnamed register + plus register
 
 vim.keymap.set('n', '<Esc><Esc>', '<cmd>nohlsearch<CR>')

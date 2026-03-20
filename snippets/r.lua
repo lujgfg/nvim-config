@@ -33,4 +33,8 @@ return {
     t("# "),i(1, "write text"), t({"", ""}),
     t("# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"), t({"", ""}),
   }),
+  s("install", { t("BiocManager::install()") }),
+  ls.snippet("mcn3", { 
+    t('devtools::load_all("~/workspace/packages/MCnebula3/")')
+  })
 }
